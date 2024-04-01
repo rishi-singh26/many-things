@@ -11,10 +11,15 @@
 
 <div>
   Resized:
-  <a [href]="resizedImageTrusted" target="_blank" *ngIf="resizedImage && resizedImage!=='processing'">
-    <img [src]="resizedImageTrusted" class="img-thumbnail">
-  </a>
-  <i *ngIf="resizedImage==='processing'">processing</i>
+  <br>
+  @if(resizedImage && resizedImage!=='processing') {
+    <a [href]="resizedImageTrusted" target="_blank">
+      <img [src]="resizedImageTrusted" class="img-thumbnail">
+    </a>
+  }
+  @if(resizedImage==='processing') {
+    <i>processing</i>
+  }
 </div>
 
 <!-- <div>

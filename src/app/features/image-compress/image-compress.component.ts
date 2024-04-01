@@ -52,7 +52,7 @@ export class ImageCompressComponent {
   private resizeImage(file: File) {
     console.info("Starting resize for file:", file);
     this.ng2ImgMaxService.resize([file], 800, 800).subscribe({
-      next: (result: any) => {
+      next: (result: Blob) => {
         console.log("Resize result:", result);
         this.resizedImage = window.URL.createObjectURL(result);
         this.resizedImageTrusted = this.sanitizer.bypassSecurityTrustUrl(this.resizedImage);
