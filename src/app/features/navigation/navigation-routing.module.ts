@@ -7,8 +7,14 @@ const routes: Routes = [
     path: '',
     component: NavigationComponent,
     children: [
-      { path: '', loadChildren: () => import('../image-compress/image-compress.module').then(m => m.ImageCompressModule) },
-      { path: 'other', loadChildren: () => import('../image-compress/image-compress.module').then(m => m.ImageCompressModule) },
+      {
+        path: '',
+        loadChildren: () => import('../image-compress/image-compress.module').then(m => m.ImageCompressModule),
+      },
+      {
+        path: 'export-to-excel',
+        loadChildren: () => import('../export-to-excel/export-to-excel.module').then(m => m.ExportToExcelModule),
+      },
     ]
   },
 ];
